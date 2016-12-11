@@ -1,2 +1,2 @@
-celery==4.0.0
+celery==4.0.1
 dogpile.cache==0.6.2
