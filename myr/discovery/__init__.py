@@ -11,6 +11,12 @@ import itertools
 
 from celery import shared_task
 from dogpile.cache import make_region
+from celery.signals import celeryd_after_setup
+
+
+@celeryd_after_setup.connect
+def setup_direct_queue(sender, instance, **kwargs):
+    instance.app.amqp.queues.select_add('_myr_discovery_')
 
 
 class TaskDiscovery:
