@@ -1,2 +1,2 @@
 celery==4.2.1
-dogpile.cache==0.7.0
+dogpile.cache==0.7.1
